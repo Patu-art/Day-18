@@ -1036,7 +1036,6 @@ textarea {
   margin: 0;
   padding: 11px 13px;
   border: 1px solid var(--line);
-  cursor: pointer;
   font: 400 10px/1 var(--mono);
   text-transform: none;
 }

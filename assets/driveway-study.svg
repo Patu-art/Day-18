@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 900">
+<defs><linearGradient id="drive" x1="0" x2="1"><stop offset="0" stop-color="#b7b0a4"/><stop offset="1" stop-color="#8c8982"/></linearGradient><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="12"/><feComponentTransfer><feFuncA type="table" tableValues="0 .08"/></feComponentTransfer></filter></defs>
+<rect width="1800" height="900" fill="#4c5f4b"/><path d="M-50 903L540 219h745l570 684z" fill="url(#drive)"/>
+<g stroke="#6f6d68" stroke-width="2" opacity=".55"><path d="M84 870l622-651M317 900l515-681M592 900l361-681M914 900l180-681M1242 900L1232 219M1548 900l-174-681"/><path d="M314 640h1233M477 460h912M612 338h654"/></g>
+<rect x="557" y="73" width="691" height="278" fill="#242a26"/><rect x="616" y="124" width="574" height="178" fill="#373d38"/>
+<g fill="#2e4634"><circle cx="178" cy="246" r="152"/><circle cx="310" cy="518" r="106"/><circle cx="1570" cy="232" r="150"/><circle cx="1466" cy="548" r="112"/></g>
+<g fill="#d2de7b"><circle cx="392" cy="332" r="8"/><circle cx="1421" cy="360" r="9"/><circle cx="223" cy="686" r="7"/><circle cx="1595" cy="676" r="8"/></g>
+<path d="M82 762C238 693 360 686 507 711" fill="none" stroke="#e6e0d4" stroke-width="26"/><path d="M1715 758c-146-70-269-72-418-40" fill="none" stroke="#e6e0d4" stroke-width="26"/><rect width="1800" height="900" filter="url(#grain)"/></svg>

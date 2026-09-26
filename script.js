@@ -1,103 +1,96 @@
-const comparison = document.querySelector("#comparison");
-const afterScene = document.querySelector("#afterScene");
-const divider = document.querySelector("#comparisonDivider");
-const services = document.querySelectorAll(".service");
-const serviceWord = document.querySelector("#serviceWord");
-const projectButtons = document.querySelectorAll(".project-options button");
+const menuButton=document.querySelector("#menuButton");
+const mainNav=document.querySelector("#mainNav");
+const revealItems=document.querySelectorAll("[data-reveal]");
+const studyTabs=document.querySelectorAll(".study-tab");
+const studyImage=document.querySelector("#studyImage");
+const studyLabel=document.querySelector("#studyLabel");
+const studyTitle=document.querySelector("#studyTitle");
+const studyCopy=document.querySelector("#studyCopy");
+const projectOptions=document.querySelectorAll(".project-options button");
+const parallaxVisual=document.querySelector("[data-parallax]");
 
-let isDragging = false;
-let comparisonValue = 50;
-
-function clamp(value, min, max) {
-  return Math.min(Math.max(value, min), max);
-}
-
-function updateComparison(value) {
-  comparisonValue = clamp(value, 4, 96);
-
-  afterScene.style.clipPath = `inset(0 0 0 ${comparisonValue}%)`;
-  divider.style.left = `${comparisonValue}%`;
-  divider.setAttribute("aria-valuenow", Math.round(comparisonValue));
-}
-
-function updateComparisonFromPointer(clientX) {
-  const bounds = comparison.getBoundingClientRect();
-  const percentage = ((clientX - bounds.left) / bounds.width) * 100;
-
-  updateComparison(percentage);
-}
-
-function startDragging(event) {
-  isDragging = true;
-  divider.setPointerCapture(event.pointerId);
-}
-
-function dragComparison(event) {
-  if (!isDragging) {
-    return;
+const studies={
+  garden:{
+    image:"./assets/garden-study-wide.svg",
+    alt:"Concept garden study",
+    label:"Concept 01 / Garden",
+    title:"Structure first.<br>Planting second.",
+    copy:"Strong paths, usable zones and planting that softens the geometry. The point is not decoration — it is a garden that reads clearly."
+  },
+  driveway:{
+    image:"./assets/driveway-study.svg",
+    alt:"Concept driveway study",
+    label:"Concept 02 / Driveway",
+    title:"Make arrival<br>part of the house.",
+    copy:"Driveway, planting and entrance are treated as one composition so the front of the property feels considered rather than purely functional."
   }
+};
 
-  updateComparisonFromPointer(event.clientX);
+function closeMenu(){
+  mainNav.classList.remove("is-open");
+  menuButton.setAttribute("aria-expanded","false");
+  menuButton.setAttribute("aria-label","Open navigation");
 }
 
-function stopDragging() {
-  isDragging = false;
+function toggleMenu(){
+  const isOpen=mainNav.classList.toggle("is-open");
+  menuButton.setAttribute("aria-expanded",String(isOpen));
+  menuButton.setAttribute("aria-label",isOpen?"Close navigation":"Open navigation");
 }
 
-function handleDividerKeydown(event) {
-  const step = event.shiftKey ? 10 : 2;
+function activateStudy(tab){
+  const study=studies[tab.dataset.study];
+  if(!study)return;
 
-  if (event.key === "ArrowLeft") {
-    event.preventDefault();
-    updateComparison(comparisonValue - step);
-  }
+  studyTabs.forEach(item=>{
+    const current=item===tab;
+    item.classList.toggle("is-active",current);
+    item.setAttribute("aria-selected",String(current));
+  });
 
-  if (event.key === "ArrowRight") {
-    event.preventDefault();
-    updateComparison(comparisonValue + step);
-  }
-
-  if (event.key === "Home") {
-    event.preventDefault();
-    updateComparison(4);
-  }
-
-  if (event.key === "End") {
-    event.preventDefault();
-    updateComparison(96);
-  }
+  studyImage.classList.add("is-changing");
+  window.setTimeout(()=>{
+    studyImage.src=study.image;
+    studyImage.alt=study.alt;
+    studyLabel.textContent=study.label;
+    studyTitle.innerHTML=study.title;
+    studyCopy.textContent=study.copy;
+    studyImage.classList.remove("is-changing");
+  },180);
 }
 
-function activateService(service) {
-  services.forEach((item) => item.classList.remove("is-active"));
-  service.classList.add("is-active");
-  serviceWord.textContent = service.dataset.word;
-}
-
-function selectProject(button) {
-  projectButtons.forEach((item) => item.classList.remove("is-selected"));
+function selectProjectOption(button){
+  projectOptions.forEach(item=>item.classList.remove("is-selected"));
   button.classList.add("is-selected");
 }
 
-divider.addEventListener("pointerdown", startDragging);
-divider.addEventListener("pointermove", dragComparison);
-divider.addEventListener("pointerup", stopDragging);
-divider.addEventListener("pointercancel", stopDragging);
-divider.addEventListener("keydown", handleDividerKeydown);
+menuButton.addEventListener("click",toggleMenu);
+mainNav.querySelectorAll("a").forEach(link=>link.addEventListener("click",closeMenu));
+studyTabs.forEach(tab=>tab.addEventListener("click",()=>activateStudy(tab)));
+projectOptions.forEach(button=>button.addEventListener("click",()=>selectProjectOption(button)));
 
-comparison.addEventListener("pointerdown", (event) => {
-  if (event.target === divider || divider.contains(event.target)) {
-    return;
+if("IntersectionObserver" in window){
+  const observer=new IntersectionObserver((entries,instance)=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      entry.target.classList.add("is-visible");
+      instance.unobserve(entry.target);
+    });
+  },{threshold:.14});
+  revealItems.forEach(item=>observer.observe(item));
+}else{
+  revealItems.forEach(item=>item.classList.add("is-visible"));
+}
+
+if(parallaxVisual&&!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  let pending=false;
+  function updateParallax(){
+    parallaxVisual.style.transform=`translateY(${Math.min(window.scrollY*.035,22)}px)`;
+    pending=false;
   }
-
-  updateComparisonFromPointer(event.clientX);
-});
-
-services.forEach((service) => {
-  service.addEventListener("mouseenter", () => activateService(service));
-  service.addEventListener("focusin", () => activateService(service));
-});
-
-projectButtons.forEach((button) => {
-  button.addEventListener("click", () => selectProject(button));
-});
+  window.addEventListener("scroll",()=>{
+    if(pending)return;
+    pending=true;
+    window.requestAnimationFrame(updateParallax);
+  },{passive:true});
+}

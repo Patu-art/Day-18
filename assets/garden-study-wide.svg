@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 900">
-<defs><linearGradient id="ground" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#758266"/><stop offset="1" stop-color="#4c5c49"/></linearGradient><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".8" numOctaves="2" seed="4"/><feComponentTransfer><feFuncA type="table" tableValues="0 .07"/></feComponentTransfer></filter></defs>
-<rect width="1800" height="900" fill="#d2cbbb"/><path d="M0 610C320 545 536 493 810 520c319 32 472 159 990 31v349H0z" fill="url(#ground)"/>
-<path d="M-84 797c251-11 465-103 662-264 169-138 282-245 520-294" fill="none" stroke="#bdb29d" stroke-width="165" stroke-linecap="round"/>
-<path d="M1113 50h548v330h-548z" fill="#272d29"/><path d="M1162 101h450v228h-450z" fill="#3b413b"/>
-<g fill="#36503a"><circle cx="208" cy="213" r="132"/><circle cx="446" cy="162" r="85"/><circle cx="753" cy="702" r="122"/><circle cx="1518" cy="665" r="155"/><circle cx="1692" cy="471" r="104"/></g>
-<g fill="#536f50"><circle cx="328" cy="672" r="76"/><circle cx="944" cy="704" r="84"/><circle cx="1343" cy="535" r="66"/></g>
-<g fill="#d2de7b"><circle cx="548" cy="295" r="9"/><circle cx="639" cy="248" r="7"/><circle cx="884" cy="607" r="9"/><circle cx="1294" cy="575" r="8"/><circle cx="1594" cy="523" r="7"/></g>
-<path d="M63 411c430-166 761-159 1067-50 289 103 476 75 666 10" fill="none" stroke="#f0eee7" stroke-opacity=".48"/><rect width="1800" height="900" filter="url(#grain)"/></svg>

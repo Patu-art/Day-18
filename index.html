@@ -2,90 +2,273 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Concept website for Sanders Landscapes — landscaping, garden design and driveways in Greater Manchester.">
-  <title>Sanders Landscapes — Built around how you live</title>
-  <link rel="stylesheet" href="./style.css?v=3">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta
+    name="description"
+    content="Concept website for Sanders Landscapes — landscaping, garden design and driveways in Greater Manchester."
+  >
+
+  <title>Sanders Landscapes — Built Around How You Live</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600&family=Playfair+Display:ital,wght@1,500&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="./style.css?v=4">
 </head>
+
 <body>
-  
-  <header class="nav">
-    <a class="brand" href="#top" aria-label="Sanders Landscapes home"><span>S</span> Sanders Landscapes</a>
-    <nav aria-label="Main navigation">
-      <a href="#work">Work</a><a href="#services">Services</a><a href="#process">Process</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Sanders Landscapes home">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span>Sanders Landscapes</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
     </nav>
-    <a class="quote-link" href="#quote">Start a project ↗</a>
+
+    <a class="header-cta" href="#quote">Start a project ↗</a>
   </header>
 
   <main id="top">
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="plot-grid" aria-hidden="true"></div>
-      <p class="eyebrow">LANDSCAPE / DESIGN / BUILD <b>GREATER MANCHESTER</b></p>
-      <h1><span>Ground</span><em>becomes</em><span>garden.</span></h1>
+
+      <p class="hero-kicker">
+        <span>Landscape / Design / Build</span>
+        <strong>Greater Manchester</strong>
+      </p>
+
+      <h1 id="hero-title" class="hero-title">
+        <span>Ground</span>
+        <em>becomes</em>
+        <span>garden.</span>
+      </h1>
+
       <div class="hero-plan" aria-hidden="true">
-        <svg viewBox="0 0 720 440"><path class="draw" d="M32 366C122 324 168 345 236 286c55-48 31-119 100-152 61-29 115 17 164-14 53-34 50-84 142-75"/><path class="draw slow" d="M65 402c104-75 164-27 233-91 56-52 45-116 116-137 81-24 122 62 226 7"/><circle cx="238" cy="286" r="12"/><circle cx="500" cy="120" r="12"/></svg>
-        <span class="note n1">existing level</span><span class="note n2">new planting</span>
+        <svg viewBox="0 0 720 440" role="presentation">
+          <path
+            class="plan-line"
+            d="M32 366C122 324 168 345 236 286c55-48 31-119 100-152 61-29 115 17 164-14 53-34 50-84 142-75"
+          />
+          <path
+            class="plan-line plan-line--delayed"
+            d="M65 402c104-75 164-27 233-91 56-52 45-116 116-137 81-24 122 62 226 7"
+          />
+          <circle cx="238" cy="286" r="12" />
+          <circle cx="500" cy="120" r="12" />
+        </svg>
+
+        <span class="plan-note plan-note--level">existing level</span>
+        <span class="plan-note plan-note--planting">new planting</span>
       </div>
-      <div class="hero-foot">
-        <p>Family-run landscaping shaped by <strong>40+ years of combined experience.</strong></p>
+
+      <div class="hero-footer">
+        <p>
+          Family-run landscaping shaped by
+          <strong>40+ years of combined experience.</strong>
+        </p>
+
         <a href="#work">Explore the ground ↓</a>
       </div>
     </section>
 
-    <section class="manifesto">
-      <p class="section-no">00 — APPROACH</p>
-      <p class="big-copy">Not decoration around a house. <i>A landscape that changes how the whole place feels.</i></p>
+    <section class="manifesto" aria-labelledby="approach-title">
+      <p class="section-label">00 — Approach</p>
+
+      <h2 id="approach-title" class="manifesto-copy">
+        Not decoration around a house.
+        <em>A landscape that changes how the whole place feels.</em>
+      </h2>
     </section>
 
-    <section class="transformation" id="work">
-      <div class="section-head"><p>01 — TRANSFORMATION</p><h2>Drag the boundary.</h2><span>Concept demonstration</span></div>
-      <div class="compare" id="compare">
-        <div class="scene scene-before"><span class="scene-label">BEFORE / EXISTING</span><div class="rough-ground"></div></div>
-        <div class="scene scene-after" id="afterScene"><span class="scene-label">AFTER / PROPOSED</span><div class="garden"><i></i><i></i><i></i><b></b><b></b><b></b></div></div>
-        <button class="divider" id="divider" aria-label="Drag to compare before and after"><span>↔</span></button>
+    <section class="transformation" id="work" aria-labelledby="transformation-title">
+      <div class="section-heading">
+        <p class="section-label">01 — Transformation</p>
+        <h2 id="transformation-title">Drag the boundary.</h2>
+        <span>Concept demonstration</span>
       </div>
-      <p class="reference-note">Interactive concept visual — not presented as a Sanders completed project.</p>
+
+      <div class="comparison" id="comparison">
+        <div class="comparison-scene comparison-scene--before">
+          <span class="scene-label">Before / Existing</span>
+          <div class="rough-ground" aria-hidden="true"></div>
+        </div>
+
+        <div
+          class="comparison-scene comparison-scene--after"
+          id="afterScene"
+          aria-hidden="true"
+        >
+          <span class="scene-label scene-label--right">After / Proposed</span>
+
+          <div class="garden-plan">
+            <span class="plant-mass plant-mass--one"></span>
+            <span class="plant-mass plant-mass--two"></span>
+            <span class="plant-mass plant-mass--three"></span>
+
+            <span class="plant-marker plant-marker--one"></span>
+            <span class="plant-marker plant-marker--two"></span>
+            <span class="plant-marker plant-marker--three"></span>
+          </div>
+        </div>
+
+        <button
+          class="comparison-divider"
+          id="comparisonDivider"
+          type="button"
+          role="slider"
+          aria-label="Compare existing and proposed landscape"
+          aria-valuemin="4"
+          aria-valuemax="96"
+          aria-valuenow="50"
+        >
+          <span aria-hidden="true">↔</span>
+        </button>
+      </div>
+
+      <p class="reference-note">
+        Interactive concept visual — not presented as a Sanders completed project.
+      </p>
     </section>
 
-    <section class="services" id="services">
-      <div class="service-intro"><p>02 — WHAT WE SHAPE</p><p>From first line to final stone.</p></div>
+    <section class="services" id="services" aria-labelledby="services-title">
+      <div class="services-intro">
+        <p class="section-label">02 — What we shape</p>
+        <p id="services-title">From first line to final stone.</p>
+      </div>
+
       <div class="service-list">
-        <article class="service active" data-word="LAND"><span>01</span><h3>Landscaping</h3><p>Complete outdoor transformations built around the site, the home and the way you use it.</p><b>↗</b></article>
-        <article class="service" data-word="PLAN"><span>02</span><h3>Garden design</h3><p>Layouts that balance planting, movement, structure and places to stop.</p><b>↗</b></article>
-        <article class="service" data-word="ARRIVE"><span>03</span><h3>Driveways</h3><p>Practical, considered entrances with a finish that belongs to the property.</p><b>↗</b></article>
+        <article class="service is-active" data-word="LAND">
+          <span class="service-number">01</span>
+          <h3>Landscaping</h3>
+          <p>
+            Complete outdoor transformations built around the site, the home
+            and the way you use it.
+          </p>
+          <span class="service-arrow" aria-hidden="true">↗</span>
+        </article>
+
+        <article class="service" data-word="PLAN">
+          <span class="service-number">02</span>
+          <h3>Garden design</h3>
+          <p>
+            Layouts that balance planting, movement, structure and places to stop.
+          </p>
+          <span class="service-arrow" aria-hidden="true">↗</span>
+        </article>
+
+        <article class="service" data-word="ARRIVE">
+          <span class="service-number">03</span>
+          <h3>Driveways</h3>
+          <p>
+            Practical, considered entrances with a finish that belongs to the property.
+          </p>
+          <span class="service-arrow" aria-hidden="true">↗</span>
+        </article>
       </div>
+
       <div class="service-word" id="serviceWord" aria-hidden="true">LAND</div>
     </section>
 
-    <section class="process" id="process">
-      <div class="sticky-title"><p>03 — THE SANDERS METHOD</p><h2>A garden doesn't appear.<br>It is <i>resolved.</i></h2></div>
-      <div class="steps">
-        <article><span>01</span><h3>Site</h3><p>Understand the ground, access and what already works.</p></article>
-        <article><span>02</span><h3>Plan</h3><p>Turn needs into levels, routes, materials and planting.</p></article>
-        <article><span>03</span><h3>Build</h3><p>Groundwork and construction create the bones of the space.</p></article>
-        <article><span>04</span><h3>Finish</h3><p>Plant, detail and hand over a landscape ready to live in.</p></article>
+    <section class="process" id="process" aria-labelledby="process-title">
+      <div class="process-heading">
+        <p class="section-label">03 — The Sanders method</p>
+        <h2 id="process-title">
+          A garden doesn't appear.<br>
+          It is <em>resolved.</em>
+        </h2>
+      </div>
+
+      <div class="process-steps">
+        <article class="process-step">
+          <span>01</span>
+          <h3>Site</h3>
+          <p>Understand the ground, access and what already works.</p>
+        </article>
+
+        <article class="process-step">
+          <span>02</span>
+          <h3>Plan</h3>
+          <p>Turn needs into levels, routes, materials and planting.</p>
+        </article>
+
+        <article class="process-step">
+          <span>03</span>
+          <h3>Build</h3>
+          <p>Groundwork and construction create the bones of the space.</p>
+        </article>
+
+        <article class="process-step">
+          <span>04</span>
+          <h3>Finish</h3>
+          <p>Plant, detail and hand over a landscape ready to live in.</p>
+        </article>
       </div>
     </section>
 
-    <section class="experience">
-      <p>04 — EXPERIENCE</p>
-      <div class="years"><strong>40</strong><sup>+</sup></div>
-      <div class="years-copy"><h2>Years of combined experience.</h2><p>A family-run father-and-son landscaping business bringing long practical experience to traditional and contemporary gardens and driveways.</p></div>
+    <section class="experience" aria-labelledby="experience-title">
+      <p class="section-label">04 — Experience</p>
+
+      <div class="experience-number" aria-hidden="true">
+        <strong>40</strong><sup>+</sup>
+      </div>
+
+      <div class="experience-copy">
+        <h2 id="experience-title">Years of combined experience.</h2>
+        <p>
+          A family-run father-and-son landscaping business bringing long
+          practical experience to traditional and contemporary gardens and driveways.
+        </p>
+      </div>
+
       <div class="contours" aria-hidden="true"></div>
     </section>
 
-    <section class="quote" id="quote">
-      <p>05 — YOUR GROUND</p>
-      <h2>What are we<br><i>transforming?</i></h2>
-      <div class="choices" role="group" aria-label="Project type">
-        <button>Garden</button><button>Driveway</button><button>Patio</button><button>Something else</button>
+    <section class="quote-section" id="quote" aria-labelledby="quote-title">
+      <p class="section-label">05 — Your ground</p>
+
+      <h2 id="quote-title">
+        What are we<br>
+        <em>transforming?</em>
+      </h2>
+
+      <div class="project-options" role="group" aria-label="Project type">
+        <button type="button">Garden</button>
+        <button type="button">Driveway</button>
+        <button type="button">Patio</button>
+        <button type="button">Something else</button>
       </div>
-      <a class="cta" href="mailto:sanderslandscapesltd@gmail.com">Tell us about the project <span>↗</span></a>
-      <p class="small">Concept demo. Confirm contact details with the business before production use.</p>
+
+      <a class="quote-cta" href="mailto:sanderslandscapesltd@gmail.com">
+        <span>Tell us about the project</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+
+      <p class="demo-note">
+        Concept demo. Confirm contact details with the business before production use.
+      </p>
     </section>
   </main>
 
-  <footer><a class="brand" href="#top"><span>S</span> Sanders Landscapes</a><p>Sale / Greater Manchester</p><p>Landscape · Design · Build</p><a href="#top">Back to ground ↑</a></footer>
-  <script src="./script.js?v=3"></script>
+  <footer class="site-footer">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">S</span>
+      <span>Sanders Landscapes</span>
+    </a>
+
+    <p>Sale / Greater Manchester</p>
+    <p>Landscape · Design · Build</p>
+    <a href="#top">Back to ground ↑</a>
+  </footer>
+
+  <script src="./script.js?v=4"></script>
 </body>
 </html>

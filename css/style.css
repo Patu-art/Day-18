@@ -301,162 +301,110 @@ footer p { font-size: 12px; line-height: 1.6; }
 @media(max-width:900px){.solver-side{grid-template-columns:1fr}.solver-side>img{height:360px}.hero-art{border-left:0}.results-row{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:600px){.hero-art{min-height:430px}.hero-stamp{right:18px;bottom:18px}.solver-side>img{height:auto;aspect-ratio:4/3}.results-row{grid-template-columns:1fr}.results-row img{height:auto;aspect-ratio:4/5}.results-row figure:nth-child(3) img{aspect-ratio:4/3}.club-story img{margin-top:28px;max-height:none;aspect-ratio:4/3}}
 
-/* Responsive repair: HERO + BOOKING REBUILT ONLY.
-   Do not place unrelated section rules below this block. */
-
-/* HERO */
-.hero{
-  min-height:clamp(620px,72vw,820px);
-  grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
-}
-.hero-copy{min-width:0}
-.hero-art{
-  min-width:0;
-  min-height:0;
-  height:auto;
-  overflow:hidden;
-}
-.hero-photo{
-  width:100%;
-  height:100%;
-  min-height:100%;
-  display:block;
-  object-fit:cover;
-  object-position:center top;
-}
-
-/* BOOKING REBUILT */
-.problem-solver{
-  grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
-  gap:clamp(36px,5vw,80px);
-  align-items:center;
-}
-.problem-solver .solver-heading,
-.problem-solver .solver-side{min-width:0}
-.problem-solver .solver-side{
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(260px,.92fr);
-  gap:18px;
-  align-items:stretch;
-  width:100%;
-}
-.problem-solver .stylist-media{
-  min-width:0;
-  height:380px;
-  overflow:hidden;
-  border:var(--border);
-  background:var(--ink);
-}
-.problem-solver .stylist-media img{
-  width:100%;
-  height:100%;
-  display:block;
-  object-fit:cover;
-  object-position:center;
-}
-.problem-solver .solver-card{
-  align-self:stretch;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  min-width:0;
-  height:380px;
-}
-
-/* Tablet / narrow landscape */
-@media(max-width:900px){
+/* HERO + BOOKING REBUILT — isolated responsive rules only */
+@media (max-width:900px){
   .hero{
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,.88fr);
     min-height:0;
-    grid-template-columns:minmax(0,1fr) minmax(300px,.86fr);
   }
   .hero-copy{
+    min-width:0;
     min-height:0;
-    padding:64px clamp(28px,5vw,48px);
+    padding:56px 36px;
   }
-  .hero h1{font-size:clamp(54px,8vw,76px)}
+  .hero h1{font-size:clamp(52px,8vw,72px)}
   .hero-art{
+    min-width:0;
     min-height:0;
     height:auto;
     border-top:0;
     border-left:var(--border);
   }
+  .hero-photo{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+    object-position:center top;
+  }
 
   .problem-solver{
-    grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
-    gap:28px;
-    padding:72px clamp(28px,5vw,48px);
+    display:grid;
+    grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);
+    gap:30px;
+    align-items:center;
+    padding:72px 36px;
   }
-  .problem-solver h2{font-size:clamp(46px,7vw,64px)}
   .problem-solver .solver-side{
-    grid-template-columns:minmax(0,1fr) minmax(220px,.9fr);
-    gap:14px;
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:12px;
+    align-items:stretch;
+    min-width:0;
   }
-  .problem-solver .stylist-media,
-  .problem-solver .solver-card{height:330px}
-  .problem-solver .solver-card{padding:22px}
-  .problem-solver .solver-card p{font-size:17px}
+  .problem-solver .stylist-media{
+    min-width:0;
+    height:320px;
+    overflow:hidden;
+    border:var(--border);
+  }
+  .problem-solver .stylist-media img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+  }
+  .problem-solver .solver-card{
+    height:320px;
+    min-width:0;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .problem-solver .solver-card p{font-size:16px}
 }
 
-/* Phone */
-@media(max-width:600px){
+@media (max-width:600px){
   .hero{display:block}
   .hero-copy{
     min-height:0;
-    padding:48px 20px 34px;
+    padding:44px 20px 30px;
   }
-  .hero h1{font-size:clamp(46px,14vw,62px)}
-  .hero-sub{font-size:15px}
+  .hero h1{font-size:clamp(46px,14vw,60px)}
   .hero-art{
-    height:300px;
+    width:100%;
+    height:280px;
     min-height:0;
-    border-top:var(--border);
     border-left:0;
+    border-top:var(--border);
   }
   .hero-photo{
     width:100%;
     height:100%;
-    min-height:0;
-    object-position:center 18%;
+    object-fit:cover;
+    object-position:center 20%;
   }
-  .hero-stamp{right:16px;bottom:16px}
 
   .problem-solver{
     display:block;
-    padding:56px 20px;
+    padding:52px 20px;
   }
-  .problem-solver .solver-heading{margin-bottom:28px}
-  .problem-solver h2{font-size:clamp(42px,12vw,54px)}
+  .problem-solver .solver-heading{margin-bottom:24px}
   .problem-solver .solver-side{
-    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-    gap:10px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
   }
-  .problem-solver .stylist-media,
-  .problem-solver .solver-card{height:260px}
+  .problem-solver .stylist-media{
+    width:100%;
+    height:220px;
+  }
   .problem-solver .solver-card{
-    padding:16px;
-    box-shadow:5px 5px 0 var(--ink);
+    width:100%;
+    height:auto;
+    min-height:0;
+    padding:20px;
   }
-  .problem-solver .solver-card p{
-    margin-bottom:14px;
-    font-size:14px;
-    line-height:1.38;
-  }
-  .problem-solver .solver-card .button{
-    min-height:44px;
-    padding:11px 9px;
-    font-size:12px;
-  }
-  .problem-solver .solver-card small{
-    margin-top:10px;
-    font-size:9px;
-    line-height:1.3;
-  }
-}
-
-/* Very small phones */
-@media(max-width:400px){
-  .hero-art{height:260px}
-  .problem-solver .solver-side{grid-template-columns:1fr}
-  .problem-solver .stylist-media{height:210px}
-  .problem-solver .solver-card{height:auto;min-height:0}
 }

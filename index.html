@@ -10,14 +10,14 @@
 </head>
 <body>
 <div class="demo-bar">UNOFFICIAL CONCEPT • FRONTEND DEMO • NO REAL BOOKINGS ARE CREATED</div>
-<header class="site-header" id="top">
+<header class="site-header" id="top"><a class="skip-link" href="#main-content">Skip to content</a>
 <a class="brand" href="#top"><span>CHOP</span><span>CHOP</span></a>
 <nav class="desktop-nav"><a href="#services">Services</a><a href="#salons">Salons</a><a href="#how">How it works</a><a href="#club">Club</a></nav>
 <button class="book-trigger primary-small" data-open-booking>Book without the guesswork</button>
-<button class="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+<button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-navigation"><span></span><span></span></button>
 </header>
-<div class="mobile-menu"><a href="#services">Services</a><a href="#salons">Salons</a><a href="#how">How it works</a><a href="#club">Club</a><button class="button dark" data-open-booking>Start booking</button></div>
-<main>
+<div class="mobile-menu" id="mobile-navigation"><a href="#services">Services</a><a href="#salons">Salons</a><a href="#how">How it works</a><a href="#club">Club</a><button class="button dark" data-open-booking>Start booking</button></div>
+<main id="main-content">
 <section class="hero">
 <div class="hero-copy"><p class="eyebrow">LONDON • SHOREDITCH + WEMBLEY PARK</p><h1>YOUR HAIR.<br><em>YOUR RULES.</em></h1>
 <p class="hero-sub">No gendered menu. No guessing which service fits. Tell us about your hair and what you want—we’ll make the booking make sense.</p>

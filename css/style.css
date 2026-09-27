@@ -293,200 +293,98 @@ footer p { font-size: 12px; line-height: 1.6; }
   .button, .primary-small, .booking-next { transform: none !important; }
 }
 
-/* Distributed imagery */
-.salon-visual{position:relative;height:320px;overflow:hidden;padding:0;border-bottom:var(--border);background:var(--ink)}
-.salon-visual::before{display:none}.salon-visual::after{content:"";position:absolute;inset:45% 0 0;width:auto;height:auto;right:0;bottom:0;border:0;border-radius:0;background:linear-gradient(transparent,rgba(17,17,17,.72))}
-.salon-visual img{width:100%;height:100%;display:block;object-fit:cover}.salon-code{position:absolute;left:22px;bottom:18px;z-index:1;color:var(--white);font:700 clamp(48px,7vw,90px)/.75 var(--display);letter-spacing:-.08em}
-.club-layout{align-items:start}.club-story{min-width:0}.club-story img{width:min(100%,680px);max-height:360px;display:block;margin-top:42px;object-fit:cover;border:1px solid var(--paper)}
-@media(max-width:900px){.solver-side{grid-template-columns:1fr}.solver-side>img{height:360px}.hero-art{border-left:0}.results-row{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:600px){.hero-art{min-height:430px}.hero-stamp{right:18px;bottom:18px}.solver-side>img{height:auto;aspect-ratio:4/3}.results-row{grid-template-columns:1fr}.results-row img{height:auto;aspect-ratio:4/5}.results-row figure:nth-child(3) img{aspect-ratio:4/3}.club-story img{margin-top:28px;max-height:none;aspect-ratio:4/3}}
+/* ---------- Photography + responsive layout ---------- */
+.hero-art{
+  position:relative; display:grid; place-items:center;
+  min-width:0; min-height:0; padding:clamp(20px,3vw,40px);
+  overflow:hidden; background:var(--teal);
+}
+.hero-photo{display:block;width:100%;max-width:520px;height:auto;max-height:620px;object-fit:contain;border:var(--border)}
+.hero-stamp{position:absolute;right:clamp(18px,4vw,46px);bottom:clamp(18px,4vw,46px)}
 
-/* Image sizing — preserve full photographs */
-.hero-art{min-height:0;display:grid;place-items:center;padding:clamp(18px,3vw,38px);background:var(--teal)}
-.hero-photo{width:min(100%,520px);height:auto;max-height:640px;object-fit:contain;border:var(--border)}
-.solver-side>img{width:min(100%,360px);height:auto;max-height:420px;object-fit:contain;justify-self:center}
-.results-row{align-items:start}
-.results-row img{width:100%;height:auto;max-height:460px;object-fit:contain;background:var(--paper)}
-.salon-visual{height:auto;min-height:0;padding:18px;background:var(--paper)}
-.salon-visual img{width:100%;height:auto;max-height:330px;object-fit:contain}
-.salon-visual::after{display:none}
-.salon-code{left:28px;bottom:26px;padding:5px 8px;background:var(--ink);font-size:clamp(28px,4vw,48px)}
-.club-story img{width:min(100%,560px);height:auto;max-height:320px;object-fit:contain}
+.solver-side{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(280px,.95fr);gap:18px;align-items:stretch;min-width:0}
+.stylist-media{height:390px;min-width:0;overflow:hidden;border:var(--border);background:var(--ink)}
+.stylist-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.solver-side .solver-card{height:390px;min-width:0;display:flex;flex-direction:column;justify-content:center}
+
+.results-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,24px);align-items:start}
+.results-row figure{width:100%;min-width:0;margin:0}
+.results-row img{display:block;width:100%;height:clamp(190px,24vw,330px);object-fit:cover}
+.results-row figcaption{padding-top:8px}
+
+.salon-visual{position:relative;height:300px;overflow:hidden;padding:0;border-bottom:var(--border);background:var(--ink)}
+.salon-visual::before,.salon-visual::after{display:none}
+.salon-visual img{display:block;width:100%;height:100%;object-fit:cover}
+.salon-visual.oldstreet img{object-position:center 55%}
+.salon-code{position:absolute;left:20px;bottom:18px;z-index:1;padding:5px 8px;background:rgba(17,17,17,.82);color:var(--white);font:700 clamp(34px,5vw,64px)/.8 var(--display);letter-spacing:-.06em}
+
+.club-layout{align-items:start}
+.club-story{min-width:0}
+.club-story img{display:block;width:100%;max-width:620px;height:auto;margin-top:32px;border:1px solid var(--paper);object-fit:contain}
+
+/* Tablet */
 @media(max-width:900px){
- .hero-art{padding:28px;min-height:0}.hero-photo{max-height:520px}
- .solver-side>img{max-height:360px}.results-row img{max-height:360px}
+  .hero{grid-template-columns:1fr 1fr;min-height:0}
+  .hero-copy{min-width:0;padding:clamp(48px,7vw,72px) clamp(24px,5vw,44px)}
+  .hero-art{min-width:0;padding:24px}
+  .hero-photo{max-width:100%;max-height:500px}
+
+  .problem-solver{grid-template-columns:1fr;gap:30px;padding:72px clamp(24px,5vw,44px)}
+  .solver-side{grid-template-columns:minmax(0,1.1fr) minmax(260px,.9fr)}
+  .stylist-media,.solver-side .solver-card{height:340px}
+
+  .results-row{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .results-row img{height:240px}
+  .salon-visual{height:240px}
 }
+
+/* Phone */
 @media(max-width:600px){
- .hero-art{min-height:0;padding:18px}.hero-photo{width:min(100%,390px);max-height:none}
- .hero-stamp{right:26px;bottom:26px}
- .solver-side>img{width:min(100%,320px);height:auto;aspect-ratio:auto;max-height:none}
- .results-row{gap:28px}.results-row img,.results-row figure:nth-child(3) img{width:min(100%,360px);height:auto;aspect-ratio:auto;max-height:none;margin-inline:auto}
- .salon-visual{padding:12px}.salon-visual img{max-height:none}
- .club-story img{width:min(100%,420px);height:auto;aspect-ratio:auto;max-height:none}
-}
-
-/* Compact photography pass — preserve full photographs */
-.hero-art{display:flex;align-items:center;justify-content:center;min-height:0;padding:clamp(24px,4vw,56px);background:var(--teal)}
-.hero-photo{width:min(100%,520px);height:auto;max-height:620px;object-fit:contain;border:var(--border)}
-.solver-side>img{width:min(100%,300px);height:auto;max-height:360px;justify-self:center;object-fit:contain;background:var(--paper)}
-.results-row{align-items:start;gap:clamp(14px,2vw,24px)}
-.results-row figure{max-width:360px;justify-self:center;width:100%}
-.results-row img{width:100%;height:auto;max-height:none;object-fit:contain}
-.salon-visual{height:auto;min-height:0;padding:18px;background:var(--paper)}
-.salon-visual img{width:100%;height:auto;max-height:360px;object-fit:contain}
-.salon-visual::after{display:none}.salon-code{left:28px;bottom:28px;padding:5px 8px;background:rgba(17,17,17,.82);font-size:clamp(28px,4vw,52px)}
-.club-story img{width:min(100%,520px);height:auto;max-height:none;object-fit:contain}
-@media(max-width:900px){.hero-art{padding:32px}.hero-photo{width:min(100%,460px);max-height:none}.solver-side>img{height:auto;max-height:none}.results-row{grid-template-columns:repeat(3,minmax(0,1fr))}.salon-visual img{max-height:none}}
-@media(max-width:600px){.hero-art{min-height:0;padding:20px}.hero-photo{width:min(100%,340px)}.hero-stamp{right:28px;bottom:28px}.results-row{grid-template-columns:1fr}.results-row figure{max-width:300px}.results-row img,.results-row figure:nth-child(3) img{height:auto;aspect-ratio:auto}.solver-side>img{width:min(100%,280px);aspect-ratio:auto}.salon-visual{padding:12px}.salon-code{left:20px;bottom:20px}.club-story img{width:min(100%,360px);aspect-ratio:auto}}
-
-/* Mobile viewport correction: compact image-led sections */
-@media (max-width:600px){
-  .hero{display:block;min-height:0}
-  .hero-copy{min-height:0;padding:52px 20px 34px}
+  html,body{max-width:100%;overflow-x:hidden}
+  .hero{display:grid;grid-template-columns:1fr;min-height:0}
+  .hero-copy{min-height:0;padding:48px 20px 32px}
   .hero h1{font-size:clamp(44px,14vw,60px)}
-  .hero-sub{margin:20px 0;font-size:15px}
-  .proof-row{margin-top:28px}
-  .hero-art{height:260px;min-height:260px;padding:12px}
-  .hero-photo{width:100%;height:100%;max-width:none;object-fit:contain}
-  .hero-stamp{right:16px;bottom:16px;padding:9px 11px;box-shadow:3px 3px 0 var(--ink)}
-  .hero-stamp strong{font-size:18px}
+  .hero-sub{margin:18px 0}
+  .proof-row{margin-top:24px}
+  .hero-art{height:270px;padding:14px;border-left:0}
+  .hero-photo{width:auto;max-width:100%;height:100%;max-height:none}
+  .hero-stamp{right:16px;bottom:16px}
 
-  .problem-solver,.services,.work,.clarity,.salons,.change-demo,.club{padding:56px 20px}
-  .problem-solver{gap:24px}
+  .problem-solver,.services,.work,.clarity,.salons,.change-demo,.club{padding:52px 20px}
+  .problem-solver{gap:22px}
   .problem-solver h2,.section-head h2,.clarity h2,.change-demo h2,.club h2{font-size:clamp(38px,11vw,50px)}
-  .solver-side{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;align-items:stretch}
-  .solver-side>img{width:110px;height:100%;max-height:230px;aspect-ratio:auto;object-fit:contain}
-  .solver-card{padding:18px;box-shadow:4px 4px 0 var(--ink)}
-  .solver-card p{font-size:14px}.solver-card small{font-size:10px}
 
-  .section-head{margin-bottom:28px}
-  .results-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-  .results-row figure{max-width:none}
-  .results-row img,.results-row figure:nth-child(3) img{width:100%;height:150px;aspect-ratio:auto;object-fit:contain}
-  .results-row figcaption{font-size:9px;padding-top:6px}
+  .solver-side{grid-template-columns:1fr;gap:12px}
+  .stylist-media{height:230px}
+  .solver-side .solver-card{height:auto;min-height:0;padding:20px}
+
+  .results-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .results-row img{height:145px}
+  .results-row figcaption{font-size:9px;line-height:1.25}
 
   .salon-grid{gap:16px}
-  .salon-visual{height:180px;padding:8px}
-  .salon-visual img{width:100%;height:100%;max-height:none;object-fit:contain}
-  .salon-code{left:14px;bottom:14px;font-size:28px}
+  .salon-visual{height:190px}
   .salon-info{padding:16px}
   .salon-book{padding:14px 16px}
+  .salon-code{left:14px;bottom:14px;font-size:30px}
 
   .club-layout{gap:24px}
-  .club-story img{width:min(72vw,280px);margin-top:20px;aspect-ratio:auto}
+  .club-story img{width:100%;max-width:360px;margin-top:20px}
   .club-card{padding:22px}
-}
-@media (max-width:380px){
-  .hero-art{height:230px;min-height:230px}
-  .solver-side{grid-template-columns:92px minmax(0,1fr)}
-  .solver-side>img{width:92px;max-height:210px}
-  .results-row img,.results-row figure:nth-child(3) img{height:125px}
-  .salon-visual{height:155px}
+
+  .booking-panel{width:100%;max-width:100vw}
 }
 
-/* Final image fit: fill each existing media div */
-.hero-photo,.solver-side>img,.results-row img,.salon-visual img,.club-story img{
-  width:100%;
-  height:100%;
-  max-width:none;
-  max-height:none;
-  display:block;
-  object-fit:fill;
-}
-@media(max-width:600px){
-  .hero-photo,.solver-side>img,.results-row img,.results-row figure:nth-child(3) img,.salon-visual img,.club-story img{
-    width:100%;
-    height:100%;
-    max-width:none;
-    max-height:none;
-    aspect-ratio:auto;
-    object-fit:fill;
-  }
-  .club-story img{margin-top:20px;height:180px}
-}
-
-/* Stylist media correction */
-.solver-side{grid-template-columns:minmax(260px,.95fr) minmax(320px,1.05fr);align-items:stretch}
-.solver-side>img{width:100%;height:100%;min-height:360px;max-height:none;object-fit:cover}
-@media(max-width:900px){
-  .solver-side{grid-template-columns:minmax(220px,.9fr) minmax(300px,1.1fr)}
-  .solver-side>img{width:100%;height:100%;min-height:330px;max-height:none;object-fit:cover}
-}
-@media(max-width:600px){
-  .solver-side{grid-template-columns:42% 58%;gap:10px}
-  .solver-side>img{width:100%;height:100%;min-height:230px;max-height:none;object-fit:cover}
-  .solver-side .solver-card{height:100%;padding:16px}
-}
+/* Small phone */
 @media(max-width:380px){
-  .solver-side{grid-template-columns:40% 60%}
-  .solver-side>img{width:100%;min-height:220px}
+  .hero-art{height:240px}
+  .results-row{grid-template-columns:1fr}
+  .results-row figure{max-width:280px;margin-inline:auto}
+  .results-row img{height:180px}
+  .stylist-media{height:210px}
+  .salon-visual{height:170px}
 }
 
-/* Visible stylist layout rebuild */
-.problem-solver{grid-template-columns:minmax(260px,.7fr) minmax(0,1.3fr);gap:clamp(28px,5vw,72px);align-items:center}
-.solver-side{display:grid;grid-template-columns:minmax(320px,1.15fr) minmax(300px,.85fr);gap:18px;align-items:stretch;width:100%}
-.stylist-media{min-width:0;height:440px;overflow:hidden;border:var(--border);background:var(--ink)}
-.stylist-media img{width:100%;height:100%;display:block;object-fit:cover;object-position:center}
-.solver-side .solver-card{height:440px;display:flex;flex-direction:column;justify-content:center}
-@media(max-width:900px){
- .problem-solver{grid-template-columns:1fr;gap:32px}
- .solver-side{grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr)}
- .stylist-media,.solver-side .solver-card{height:380px}
-}
-@media(max-width:600px){
- .problem-solver{padding:52px 20px;gap:24px}
- .solver-side{grid-template-columns:1.15fr .85fr;gap:10px}
- .stylist-media,.solver-side .solver-card{height:250px;min-height:250px}
- .solver-side .solver-card{padding:14px}
- .solver-side .solver-card p{font-size:13px;line-height:1.35}
- .solver-side .solver-card .button{padding:11px 10px;min-height:42px;font-size:12px}
- .solver-side .solver-card small{margin-top:10px;font-size:9px;line-height:1.3}
-}
-@media(max-width:380px){
- .solver-side{grid-template-columns:1.2fr .8fr}
- .stylist-media,.solver-side .solver-card{height:230px;min-height:230px}
-}
-
-/* Screenshot-driven fix: the browser can use a wide CSS viewport on mobile.
-   Fix the booking-rebuilt composition at tablet widths too, not only <=600px. */
-@media (max-width:900px){
-  .problem-solver{
-    grid-template-columns:1fr 1fr;
-    gap:24px;
-    align-items:center;
-    padding:64px clamp(20px,5vw,44px);
-  }
-  .solver-heading{align-self:center}
-  .solver-side{
-    display:grid;
-    grid-template-columns:minmax(180px,.95fr) minmax(220px,1.05fr);
-    gap:14px;
-    align-items:stretch;
-  }
-  .stylist-media{
-    width:100%;
-    height:320px;
-    min-height:0;
-  }
-  .stylist-media img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-  }
-  .solver-side .solver-card{
-    width:100%;
-    height:320px;
-    min-height:0;
-    padding:22px;
-  }
-}
-@media (max-width:700px){
-  .problem-solver{grid-template-columns:1fr;gap:22px;padding:52px 20px}
-  .solver-side{grid-template-columns:minmax(0,1fr) minmax(0,1fr);width:100%}
-  .stylist-media,.solver-side .solver-card{height:260px;min-height:0}
-}
-@media (max-width:430px){
-  .solver-side{grid-template-columns:1fr}
-  .stylist-media{height:220px}
-  .solver-side .solver-card{height:auto;min-height:0}
+@media(prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
 }

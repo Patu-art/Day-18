@@ -251,7 +251,7 @@ img{max-width:100%}
 .club-story img{display:block;width:100%;max-width:620px;height:auto;margin-top:32px;border:1px solid var(--paper);object-fit:contain}
 
 /* Tablet */
-@media(max-width:900px){
+@media(max-width:1100px){
   .site-header{height:70px;grid-template-columns:1fr auto;padding-inline:20px}
   .desktop-nav,.primary-small{display:none}
   .menu-btn{width:46px;height:46px;display:flex;flex-direction:column;justify-content:center;gap:6px;border:0;background:transparent}

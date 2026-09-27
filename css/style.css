@@ -300,3 +300,45 @@ footer p { font-size: 12px; line-height: 1.6; }
 .club-layout{align-items:start}.club-story{min-width:0}.club-story img{width:min(100%,680px);max-height:360px;display:block;margin-top:42px;object-fit:cover;border:1px solid var(--paper)}
 @media(max-width:900px){.solver-side{grid-template-columns:1fr}.solver-side>img{height:360px}.hero-art{border-left:0}.results-row{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:600px){.hero-art{min-height:430px}.hero-stamp{right:18px;bottom:18px}.solver-side>img{height:auto;aspect-ratio:4/3}.results-row{grid-template-columns:1fr}.results-row img{height:auto;aspect-ratio:4/5}.results-row figure:nth-child(3) img{aspect-ratio:4/3}.club-story img{margin-top:28px;max-height:none;aspect-ratio:4/3}}
+
+
+/* Booking rebuilt — isolated section structure */
+.problem-solver .solver-side{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);
+  gap:18px;
+  align-items:stretch;
+  width:100%;
+}
+.problem-solver .stylist-media{
+  min-width:0;
+  height:440px;
+  overflow:hidden;
+  border:var(--border);
+  background:var(--ink);
+}
+.problem-solver .stylist-media img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.problem-solver .solver-card{
+  height:440px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+@media(max-width:900px){
+  .problem-solver .solver-side{
+    grid-template-columns:minmax(0,1.15fr) minmax(260px,.85fr);
+  }
+  .problem-solver .stylist-media,
+  .problem-solver .solver-card{height:360px}
+}
+@media(max-width:600px){
+  .problem-solver .solver-side{grid-template-columns:1fr;gap:14px}
+  .problem-solver .stylist-media{height:230px}
+  .problem-solver .solver-card{height:auto;min-height:0}
+}

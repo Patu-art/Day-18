@@ -300,3 +300,27 @@ footer p { font-size: 12px; line-height: 1.6; }
 .club-layout{align-items:start}.club-story{min-width:0}.club-story img{width:min(100%,680px);max-height:360px;display:block;margin-top:42px;object-fit:cover;border:1px solid var(--paper)}
 @media(max-width:900px){.solver-side{grid-template-columns:1fr}.solver-side>img{height:360px}.hero-art{border-left:0}.results-row{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:600px){.hero-art{min-height:430px}.hero-stamp{right:18px;bottom:18px}.solver-side>img{height:auto;aspect-ratio:4/3}.results-row{grid-template-columns:1fr}.results-row img{height:auto;aspect-ratio:4/5}.results-row figure:nth-child(3) img{aspect-ratio:4/3}.club-story img{margin-top:28px;max-height:none;aspect-ratio:4/3}}
+
+/* Image sizing — preserve full photographs */
+.hero-art{min-height:0;display:grid;place-items:center;padding:clamp(18px,3vw,38px);background:var(--teal)}
+.hero-photo{width:min(100%,520px);height:auto;max-height:640px;object-fit:contain;border:var(--border)}
+.solver-side>img{width:min(100%,360px);height:auto;max-height:420px;object-fit:contain;justify-self:center}
+.results-row{align-items:start}
+.results-row img{width:100%;height:auto;max-height:460px;object-fit:contain;background:var(--paper)}
+.salon-visual{height:auto;min-height:0;padding:18px;background:var(--paper)}
+.salon-visual img{width:100%;height:auto;max-height:330px;object-fit:contain}
+.salon-visual::after{display:none}
+.salon-code{left:28px;bottom:26px;padding:5px 8px;background:var(--ink);font-size:clamp(28px,4vw,48px)}
+.club-story img{width:min(100%,560px);height:auto;max-height:320px;object-fit:contain}
+@media(max-width:900px){
+ .hero-art{padding:28px;min-height:0}.hero-photo{max-height:520px}
+ .solver-side>img{max-height:360px}.results-row img{max-height:360px}
+}
+@media(max-width:600px){
+ .hero-art{min-height:0;padding:18px}.hero-photo{width:min(100%,390px);max-height:none}
+ .hero-stamp{right:26px;bottom:26px}
+ .solver-side>img{width:min(100%,320px);height:auto;aspect-ratio:auto;max-height:none}
+ .results-row{gap:28px}.results-row img,.results-row figure:nth-child(3) img{width:min(100%,360px);height:auto;aspect-ratio:auto;max-height:none;margin-inline:auto}
+ .salon-visual{padding:12px}.salon-visual img{max-height:none}
+ .club-story img{width:min(100%,420px);height:auto;aspect-ratio:auto;max-height:none}
+}

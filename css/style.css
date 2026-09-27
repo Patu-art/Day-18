@@ -338,3 +338,48 @@ footer p { font-size: 12px; line-height: 1.6; }
 .club-story img{width:min(100%,520px);height:auto;max-height:none;object-fit:contain}
 @media(max-width:900px){.hero-art{padding:32px}.hero-photo{width:min(100%,460px);max-height:none}.solver-side>img{height:auto;max-height:none}.results-row{grid-template-columns:repeat(3,minmax(0,1fr))}.salon-visual img{max-height:none}}
 @media(max-width:600px){.hero-art{min-height:0;padding:20px}.hero-photo{width:min(100%,340px)}.hero-stamp{right:28px;bottom:28px}.results-row{grid-template-columns:1fr}.results-row figure{max-width:300px}.results-row img,.results-row figure:nth-child(3) img{height:auto;aspect-ratio:auto}.solver-side>img{width:min(100%,280px);aspect-ratio:auto}.salon-visual{padding:12px}.salon-code{left:20px;bottom:20px}.club-story img{width:min(100%,360px);aspect-ratio:auto}}
+
+/* Mobile viewport correction: compact image-led sections */
+@media (max-width:600px){
+  .hero{display:block;min-height:0}
+  .hero-copy{min-height:0;padding:52px 20px 34px}
+  .hero h1{font-size:clamp(44px,14vw,60px)}
+  .hero-sub{margin:20px 0;font-size:15px}
+  .proof-row{margin-top:28px}
+  .hero-art{height:260px;min-height:260px;padding:12px}
+  .hero-photo{width:100%;height:100%;max-width:none;object-fit:contain}
+  .hero-stamp{right:16px;bottom:16px;padding:9px 11px;box-shadow:3px 3px 0 var(--ink)}
+  .hero-stamp strong{font-size:18px}
+
+  .problem-solver,.services,.work,.clarity,.salons,.change-demo,.club{padding:56px 20px}
+  .problem-solver{gap:24px}
+  .problem-solver h2,.section-head h2,.clarity h2,.change-demo h2,.club h2{font-size:clamp(38px,11vw,50px)}
+  .solver-side{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;align-items:stretch}
+  .solver-side>img{width:110px;height:100%;max-height:230px;aspect-ratio:auto;object-fit:contain}
+  .solver-card{padding:18px;box-shadow:4px 4px 0 var(--ink)}
+  .solver-card p{font-size:14px}.solver-card small{font-size:10px}
+
+  .section-head{margin-bottom:28px}
+  .results-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .results-row figure{max-width:none}
+  .results-row img,.results-row figure:nth-child(3) img{width:100%;height:150px;aspect-ratio:auto;object-fit:contain}
+  .results-row figcaption{font-size:9px;padding-top:6px}
+
+  .salon-grid{gap:16px}
+  .salon-visual{height:180px;padding:8px}
+  .salon-visual img{width:100%;height:100%;max-height:none;object-fit:contain}
+  .salon-code{left:14px;bottom:14px;font-size:28px}
+  .salon-info{padding:16px}
+  .salon-book{padding:14px 16px}
+
+  .club-layout{gap:24px}
+  .club-story img{width:min(72vw,280px);margin-top:20px;aspect-ratio:auto}
+  .club-card{padding:22px}
+}
+@media (max-width:380px){
+  .hero-art{height:230px;min-height:230px}
+  .solver-side{grid-template-columns:92px minmax(0,1fr)}
+  .solver-side>img{width:92px;max-height:210px}
+  .results-row img,.results-row figure:nth-child(3) img{height:125px}
+  .salon-visual{height:155px}
+}

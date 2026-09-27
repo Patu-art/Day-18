@@ -446,3 +446,47 @@ footer p { font-size: 12px; line-height: 1.6; }
  .solver-side{grid-template-columns:1.2fr .8fr}
  .stylist-media,.solver-side .solver-card{height:230px;min-height:230px}
 }
+
+/* Screenshot-driven fix: the browser can use a wide CSS viewport on mobile.
+   Fix the booking-rebuilt composition at tablet widths too, not only <=600px. */
+@media (max-width:900px){
+  .problem-solver{
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    align-items:center;
+    padding:64px clamp(20px,5vw,44px);
+  }
+  .solver-heading{align-self:center}
+  .solver-side{
+    display:grid;
+    grid-template-columns:minmax(180px,.95fr) minmax(220px,1.05fr);
+    gap:14px;
+    align-items:stretch;
+  }
+  .stylist-media{
+    width:100%;
+    height:320px;
+    min-height:0;
+  }
+  .stylist-media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .solver-side .solver-card{
+    width:100%;
+    height:320px;
+    min-height:0;
+    padding:22px;
+  }
+}
+@media (max-width:700px){
+  .problem-solver{grid-template-columns:1fr;gap:22px;padding:52px 20px}
+  .solver-side{grid-template-columns:minmax(0,1fr) minmax(0,1fr);width:100%}
+  .stylist-media,.solver-side .solver-card{height:260px;min-height:0}
+}
+@media (max-width:430px){
+  .solver-side{grid-template-columns:1fr}
+  .stylist-media{height:220px}
+  .solver-side .solver-card{height:auto;min-height:0}
+}

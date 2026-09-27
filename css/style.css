@@ -89,7 +89,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid 
 .service-card button { margin-top: 18px; padding: 14px 0; border: 0; border-top: 1px solid currentColor; background: transparent; color: inherit; text-align: left; font-weight: 700; }
 .all-services { margin-top: 32px; padding: 17px 22px; border: 1px solid var(--paper); background: transparent; color: var(--paper); }
 
-/* Six prepared image slots. Replace placeholder content with local <img> files later. */
+/* Work and salon photography */
 .work { padding: 110px var(--page-x); }
 .work code { font-size: .9em; }
 .work-grid { display: grid; grid-template-columns: repeat(12,1fr); gap: 20px; }
@@ -266,7 +266,9 @@ footer p { font-size: 12px; line-height: 1.6; }
   .section-head { gap: 25px; margin-bottom: 40px; }
   .work-grid { gap: 14px; }
   .work-shot, .work-shot--lead, .work-shot--salon { grid-column: 1/-1; }
-  .work-shot--lead .asset-placeholder, .work-shot--salon .asset-placeholder { aspect-ratio: 4/3; }
+  .work-shot--lead .work-image, .work-shot--salon .work-image { aspect-ratio: 4/3; }
+  .work-notes { grid-template-columns: 1fr; margin-top: 45px; }
+  .work-notes img { height: auto; aspect-ratio: 4/3; }
   .clarity { gap: 45px; }
   .receipt { padding: 22px; box-shadow: 7px 7px 0 var(--ink); }
   .salon-visual { height: 220px; }
